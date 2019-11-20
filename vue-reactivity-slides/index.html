@@ -10,6 +10,7 @@
             --slide-ratio: calc(16 / 9);
         }
     </style>
+    <script src="https://unpkg.com/vue"></script>
 </head>
 <body class="shower list">
 
@@ -33,14 +34,44 @@
 
     <section class="slide">
         <h2>
-            О себе
+            Докладчик
         </h2>
+        <ul>
+            Кучук Андрей
+            <li>Фронт-энд разработчик Epicmax</li>
+            <li>Докладчик Rolling Scopes</li>
+            <li>Ментор Rolling Scopes School</li>
+        </ul>
+
+        Github: <a href="https://github.com/Kreezag" alt="">https://github.com/Kreezag</a>
+        <br>
+        Twitter: <a href="https://twitter.com/Kreez_AG" alt="">https://twitter.com/Kreez_AG</a>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="workshop">
         <h2>
-            Вдохновение
+             Идея доклада
         </h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            Мастеркласс Эвана Ю
+            <br>
+            Advanced Vue.js Features from the Ground Up
+        </p>
+        <div>
+            <img class="cover width" src="https://images.ctfassets.net/tfws0ki30xlo/3BaAu4sUiQwaiUcuueuEqy/4b8c89d22c42093e96159a0d6b1433f8/image5.jpg?fit=scale&q=100&w=1000" alt="vue workshop">
+        </div>
+        <style>
+            #workshop h2 {
+                color: #ffffff;
+            }
+            #workshop p {
+                color: #ffffff;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -62,17 +93,45 @@
         </h2>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="vue-logo">
         <h2>
-
             Что такое Vue.js
         </h2>
         <blockquote>
             <p>
-                The Progressive
-                JavaScript Framework
+                Vue (произносится /vjuː/, примерно как view) — это прогрессивный фреймворк для создания пользовательских интерфейсов.
             </p>
         </blockquote>
+        <style>
+            #vue-logo {
+                background: #fff url(https://vuejs.org/images/logo.png) 90% 90% no-repeat;
+                background-size: 15%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Преимущества
+        </h2>
+        <ul>
+            <li> Легковесный (~20КБ gzip в ядре и ~30КБ в роутингом и хранилищем)</li>
+            <li>Относительно простой в изучении</li>
+            <li>Возможность частичного внедрения</li>
+            <li>Реактивность</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Недостатки
+        </h2>
+        <ul>
+            <li>Излишняя гибкость</li>
+            <li>Неясные архитектурные шаблоны</li>
+            <li>Замкнут на себе</li>
+            <li>Меньше сторонних библиотек</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -82,10 +141,102 @@
     </section>
 
     <section class="slide">
-        <h2 class="shout">
-            Реализация
+        <h2>
+            Счетчик на vue
         </h2>
+        <div>
+            <div id="vue1"></div>
+        </div>
     </section>
+
+    <script>
+      new Vue({
+        data: {
+          count: 0
+        },
+        methods: {
+            increment () {
+              this.count += 1
+            },
+            decrement () {
+              this.count -= 1
+            }
+        },
+        render (h) {
+            return h('div', [
+              h('div', this.count),
+              h('button', {
+                on: {
+                  click: this.increment
+                }
+              }, 'increase'),
+
+              h('button', {
+                on: {
+                  click: this.decrement
+                }
+              }, 'decrease')
+            ])
+        }
+      }).$mount('#vue1')
+
+    </script>
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        ~~~ Спрайт шит таблицы
+    </section>
+
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>let a = 1</code>
+            <code>let b = a * 10</code>
+            <code>console.log(b) <span class="comment">// b === 10</span></code>
+            <code>a = 2 <span class="comment">// a === 2</span></code>
+            <code>console.log(b) <span class="comment">// b === 10</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>onAChange(() => b = a * 10)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>let a = 1</code>
+            <code>render(a)<span class="comment">// &lt;div&gt;1&lt;/div&gt;</code>
+            <code>a++</code>
+            <code>onAChange(() => render(a))<span class="comment">// &lt;div&gt;2&lt;/div&gt;</code>
+        </pre>
+    </section>
+
+<!--    <section class="slide">-->
+<!--        <h2>-->
+<!--            Счетчик на vue-->
+<!--        </h2>-->
+<!--        <pre>-->
+<!--            <code><div id="vue1">{{count}}</div></code>-->
+<!--            <code>  {{count}}</div></code>-->
+<!--            <code><div id="vue1">{{count}}</div></code>-->
+<!--        </pre>-->
+<!--    </section>-->
+<!--    <section class="slide">-->
+<!--        <h2 class="shout">-->
+<!--            Реализация-->
+<!--        </h2>-->
+<!--    </section>-->
 
     <section class="slide">
         <h2 class="shout">
