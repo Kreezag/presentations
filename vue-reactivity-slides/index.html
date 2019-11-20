@@ -206,7 +206,9 @@
             Мотивация автора
         </h2>
         <pre>
-            <code>onAChange(() => b = a * 10)</code>
+            <code>onAChange(() => {</code>
+            <code>  b = a * 10</code>
+            <code>})</code>
         </pre>
     </section>
 
@@ -216,28 +218,62 @@
         </h2>
         <pre>
             <code>let a = 1</code>
-            <code>render(a)<span class="comment">// &lt;div&gt;1&lt;/div&gt;</code>
+            <code>render(a)<span class="comment">// &lt;div class="cell b1"&gt;1&lt;/div&gt;</code>
             <code>a++</code>
-            <code>onAChange(() => render(a))<span class="comment">// &lt;div&gt;2&lt;/div&gt;</code>
+            <code>onStateChange(() => render(a))<span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div&gt;</code>
+        </pre>
+
+        <br>
+        <pre>
+            <code>render = (a) => {</code>
+            <code>  document.querySelector('cell b1').innerText = a</code>
+            <code>}</code>
         </pre>
     </section>
 
-<!--    <section class="slide">-->
-<!--        <h2>-->
-<!--            Счетчик на vue-->
-<!--        </h2>-->
-<!--        <pre>-->
-<!--            <code><div id="vue1">{{count}}</div></code>-->
-<!--            <code>  {{count}}</div></code>-->
-<!--            <code><div id="vue1">{{count}}</div></code>-->
-<!--        </pre>-->
-<!--    </section>-->
-<!--    <section class="slide">-->
-<!--        <h2 class="shout">-->
-<!--            Реализация-->
-<!--        </h2>-->
-<!--    </section>-->
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>let update</code>
+            <code>const onStateChange((_update) => {</code>
+            <code>  update = _update</code>
+            <code>})</code>
+            <code>const setState = (newState) => {</code>
+            <code>  state = newState</code>
+            <code>  update()</code>
+            <code>}</code>
+        </pre>
 
+        <br>
+        <pre>
+            <code>render = (a) => {</code>
+            <code>  document.querySelector('cell b1').innerText = a</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            Реализация
+        </h2>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="https://ru.vuejs.org/images/data.png" alt="reactivity">
+    </section>
+
+    <section class="slide">
+        <h2>
+            Можно разделить на 3 модуля
+        </h2>
+        <ul>
+            <li>Надзератель (observer)</li>
+            <li>Мониторинг зависимостей (dependencies tracking)</li>
+            <li>Функция отрисовки (render)</li>
+        </ul>
+    </section>
     <section class="slide">
         <h2 class="shout">
             Live coding!
@@ -254,15 +290,22 @@
         <h2>
             Полезные материалы
         </h2>
+        <ul>
+            <li><a href="">Материал ; </a></li>
+            <li><a href="">Материал ; </a></li>
+            <li><a href="">Материал ; </a></li>
+            <li><a href="">Материал ; </a></li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>
             Спасибо за внимание!
         </h2>
-    </section>
 
-    <section class="slide">
+        <h3>
+            Вопросы?
+        </h3>
     </section>
 
     <footer class="badge">
