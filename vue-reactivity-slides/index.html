@@ -11,7 +11,6 @@
         }
     </style>
     <script src="https://unpkg.com/vue"></script>
-    <script src="reactivity.js"></script>
 </head>
 <body class="shower list">
 
@@ -154,7 +153,7 @@
     <script>
       new Vue({
         data: {
-          count: 0
+          count: 1
         },
         methods: {
             increment () {
@@ -417,11 +416,28 @@
         </h2>
     </section>
 
+    <section class="slide">
+        <h2>
+            Сравнение
+        </h2>
+
+        <div>
+            Счетчик на Vue:
+            <div id="vue2"></div>
+        </div>
+
+        <div>
+            Счетчик на js:
+            <div id="testId"></div>
+            <button onClick="addClick()">Increment</button>
+            <button onClick="removeClick()">Decrement</button>
+        </div>
+    </section>
 
     <script>
       new Vue({
         data: {
-          count: 0
+          count: 1
         },
         methods: {
           increment () {
@@ -447,21 +463,9 @@
             }, 'decrease')
           ])
         }
-      }).$mount('#vue_2')
+      }).$mount('#vue2')
 
     </script>
-    <section class="slide">
-        <h2>
-            Сравнение
-        </h2>
-
-        <div>
-            Счетчик на Vue:
-            <div id="vue_2"></div>
-        </div>
-
-        Счетчик на js
-    </section>
 
     <section class="slide">
         <h2 class="shout">
@@ -509,6 +513,7 @@
     <div class="progress"></div>
 
     <script src="node_modules/shower-core/shower.min.js"></script>
+    <script src="reactivity.js"></script>
     <!-- Copyright © 2019 Yours Truly, Famous Inc. -->
 
 </body>

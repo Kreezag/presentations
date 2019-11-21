@@ -1,6 +1,6 @@
 // state
 let state = {
-  count: 0,
+  count: 1,
 }
 
 
@@ -57,11 +57,10 @@ function removeClick () {
   state.count -= 1
 }
 
-function render (state) {
-  if (state) {
-    document.querySelector('#testId').textContent = state
-  }
-  console.log(`component should render ${state}`)
+function render (count) {
+  document.querySelector('#testId').innerText = `${count}`
+
+  console.log(`component should render ${count}`)
 }
 
 
@@ -80,4 +79,4 @@ install(() => {
   render(state.count)
 })
 
-
+// render(state.count)
