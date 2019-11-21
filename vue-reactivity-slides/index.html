@@ -267,7 +267,7 @@
 
     <section class="slide">
         <h2>
-            Можно разделить на 3 модуля
+            Архитектура работы с состоянием
         </h2>
         <ul>
             <li>Надзератель (observer)</li>
@@ -285,6 +285,34 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Задачи:
+        </h2>
+        <ol>
+            <li>Конвертировать поля объекта в гетеры и сетеры </li>
+            <li>Реализовать функции отслеживания изменений (depend и notify)</li>
+            <li>Механизм вызова функции отрисовки при изменении данных</li>
+            <li>Функция отрисовки (render)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Задачи:
+        </h2>
+        <pre>
+            <code>function observe(stateObject)</code>
+            <code> </code>
+            <code>class Dep {</code>
+            <code>  depend(),</code>
+            <code>  notify()</code>
+            <code>}</code>
+            <code> </code>
+            <code>install(() => render(stateObject))</code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <h2 class="shout">
             Live coding!
         </h2>
@@ -294,6 +322,17 @@
         <h2 class="shout">
             Заключение
         </h2>
+    </section>
+
+    <section class="slide">
+        <h2>
+            О чем не рассказал
+        </h2>
+        <ul>
+            <li>Дериктива v-model (v-bind + v-on)</li>
+            <li>Составные свойства (computed property)</li>
+            <li>Функция watch</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -309,7 +348,7 @@
     </section>
 
     <section class="slide">
-        <h2>
+        <h2 class="shout">
             Спасибо за внимание!
         </h2>
 
@@ -317,14 +356,10 @@
         <br>
     </section>
     <section class="slide">
-        <h2>
+        <h2 class="shout">
             Вопросы?
         </h2>
     </section>
-
-    <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
 
     <div class="progress"></div>
 
