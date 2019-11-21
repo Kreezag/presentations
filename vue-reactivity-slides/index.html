@@ -120,6 +120,7 @@
             <li>Относительно простой в изучении</li>
             <li>Возможность частичного внедрения</li>
             <li>Реактивность</li>
+            <li>Поддержка крупными компаниями (Alibaba)</li>
         </ul>
     </section>
 
@@ -182,6 +183,58 @@
       }).$mount('#vue1')
 
     </script>
+
+
+    <section class="slide">
+        <h2>
+            Код счетчика
+        </h2>
+
+        <pre>
+            <code>&lt;div id="counter">{{count}}&lt;/div></code>
+            <code> </code>
+            <code>new Vue({</code>
+            <code>  data: {</code>
+            <code>      count: 0</code>
+            <code>  },</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Реактивность в js
+        </h2>
+        <pre>
+            <code>let a = { state: 1 }</code>
+            <code>let b = a</code>
+            <code>console.log(b)<span class="comment">// { state: 1 }</span></code>
+            <code>a.state = 2</code>
+            <code>console.log(b)<span class="comment">// { state: 2 }</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Реактивность в js
+        </h2>
+        <p>
+            Потому что это один и тот же обьект в памяти
+        </p>
+        <pre>
+            <code> a === b <span class="comment">// true </span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Реактивность в js
+        </h2>
+        <p>
+            Как сделать тоже самое для html?
+        </p>
+    </section>
+
     <section class="slide">
         <h2>
             Мотивация автора
@@ -219,13 +272,10 @@
         </h2>
         <pre>
             <code>let a = 1</code>
-            <code>render(a)<span class="comment">// &lt;div class="cell b1"&gt;1&lt;/div&gt;</code>
+            <code>render(a)<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
             <code>a++</code>
-            <code>onStateChange(() => render(a))<span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div&gt;</code>
-        </pre>
-
-        <br>
-        <pre>
+            <code>onStateChange(() => render(a))<span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div></span></code>
+            <code> </code>
             <code>render = (a) => {</code>
             <code>  document.querySelector('cell b1').innerText = a</code>
             <code>}</code>
@@ -270,30 +320,31 @@
             Архитектура работы с состоянием
         </h2>
         <ul>
-            <li>Надзератель (observer)</li>
-            <li>Мониторинг зависимостей (dependencies tracking)</li>
-            <li>Функция отрисовки (render)</li>
+            <li>Надзератель (observer) <code class="comment">// object -> get/set</code></li>
+            <li>
+                Мониторинг зависимостей (dependencies tracking)
+                <br>
+                <code class="comment">// stateChange -> notify</code>
+            </li>
+            <li>Функция отрисовки (render)<code class="comment">// render()</code></li>
         </ul>
     </section>
 
     <section class="slide">
         <h2>
-            Исходный код Vue
+            Как работает Vue (абстрактно)
         </h2>
 
-        <img src="" alt="">
-    </section>
+        <pre>
+            <code>state = { a: 5 }</code>
+            <code>observe(state)</code>
+            <code><span class="comment">// a -> a: { get () {}, set () => {} }</span></code>
+            <code>render(state) <span class="comment">// depend (state.a) </span></code>
+            <code>state.a = 10 </code>
+            <code><span class="comment">// notify () => depends.forEach(dep => dep()) )</span> </code>
+            <code><span class="comment">// => render()</span></code>
+        </pre>
 
-    <section class="slide">
-        <h2>
-            Задачи:
-        </h2>
-        <ol>
-            <li>Конвертировать поля объекта в гетеры и сетеры </li>
-            <li>Реализовать функции отслеживания изменений (depend и notify)</li>
-            <li>Механизм вызова функции отрисовки при изменении данных</li>
-            <li>Функция отрисовки (render)</li>
-        </ol>
     </section>
 
     <section class="slide">
@@ -313,9 +364,103 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Observe
+        </h2>
+
+        <pre>
+            <code>function observe (object) {</code>
+            <code>  Object.keys(obj).map((key) => {</code>
+            <code>    let value = obj[key]</code>
+            <code>    Object.defineProperty(obj, key, {</code>
+            <code>      get () { return value },</code>
+            <code>      set (newValue) { value = newValue },</code>
+            <code>    })</code>
+            <code>  }</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Dep
+        </h2>
+
+        <pre>
+            <code>class Dep {</code>
+            <code>  constructor () {</code>
+            <code>    this.dependencies = new Set()</code>
+            <code>  },</code>
+            <code>  depend () {  this.dependencies.add(update) },</code>
+            <code>  notify () {  this.dependencies.forEach(dep => dep()) }</code>
+            <code>}</code>
+            <code> <span class="comment">// update === () => { render() }</span></code>
+        </pre>
+
+    </section>
+
+    <section class="slide">
+        <h2>
+            Задачи:
+        </h2>
+        <ol>
+            <li>Конвертировать поля объекта в гетеры и сетеры </li>
+            <li>Реализовать функции отслеживания изменений (depend и notify)</li>
+            <li>Механизм вызова функции отрисовки при изменении данных</li>
+            <li>Функция отрисовки (render)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
         <h2 class="shout">
             Live coding!
         </h2>
+    </section>
+
+
+    <script>
+      new Vue({
+        data: {
+          count: 0
+        },
+        methods: {
+          increment () {
+            this.count += 1
+          },
+          decrement () {
+            this.count -= 1
+          }
+        },
+        render (h) {
+          return h('div', [
+            h('div', this.count),
+            h('button', {
+              on: {
+                click: this.increment
+              }
+            }, 'increase'),
+
+            h('button', {
+              on: {
+                click: this.decrement
+              }
+            }, 'decrease')
+          ])
+        }
+      }).$mount('#vue_2')
+
+    </script>
+    <section class="slide">
+        <h2>
+            Сравнение
+        </h2>
+
+        <div>
+            Счетчик на Vue:
+            <div id="vue_2"></div>
+        </div>
+
+        Счетчик на js
     </section>
 
     <section class="slide">
