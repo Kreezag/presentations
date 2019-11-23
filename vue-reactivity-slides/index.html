@@ -16,6 +16,10 @@
         .crossout {
             text-decoration: line-through;
         }
+        .vue-logo {
+            background: #fff url(https://vuejs.org/images/logo.png) 90% 90% no-repeat;
+            background-size: 15%;
+        }
     </style>
     <script src="https://unpkg.com/vue"></script>
 </head>
@@ -100,7 +104,7 @@
         </h2>
     </section>
 
-    <section class="slide" id="vue-logo">
+    <section class="slide vue-logo">
         <h2>
             Что такое Vue.js
         </h2>
@@ -109,12 +113,6 @@
                 Vue (произносится /vjuː/, примерно как view) — это прогрессивный фреймворк для создания пользовательских интерфейсов.
             </p>
         </blockquote>
-        <style>
-            #vue-logo {
-                background: #fff url(https://vuejs.org/images/logo.png) 90% 90% no-repeat;
-                background-size: 15%;
-            }
-        </style>
     </section>
 
     <section class="slide">
@@ -175,7 +173,7 @@
         </pre>
     </section>
 
-    <section class="slide">
+    <section class="slide vue-logo">
         <h2>
             Идея реактивности Vue.js
         </h2>
@@ -455,7 +453,7 @@
     </section>
 
     <section class="slide">
-        <h2>
+        <h2 id="observe">
             Observe
         </h2>
 
@@ -470,6 +468,12 @@
             <code>  };</code>
             <code>};</code>
         </pre>
+        <style>
+            #observe {
+                font-size: 40px;
+                margin-top: -15px;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -580,12 +584,13 @@
         <h2>
             Полезные материалы
         </h2>
-        <ul>
-            <li><a href="">Материал ; </a></li>
-            <li><a href="">Материал ; </a></li>
-            <li><a href="">Материал ; </a></li>
-            <li><a href="">Материал ; </a></li>
-        </ul>
+        <ol>
+            <li><a href="https://vuejs.org/v2/guide/reactivity.html">Reactivity in Depth</a> Vue.js documentation,</li>
+            <li><a href="https://frontendmasters.com/courses/advanced-vue/">Advanced Vue.js Features from the Ground Up</a> by Frontend Masters,</li>
+            <li><a href="https://medium.com/@j_lim_j/summary-of-advanced-vuejs-features-by-evan-you-part-1-of-7-reactivity-b88ea6935a5d">Summary of Advanced VueJS Features by Evan You (7 parts)</a> by Lim,</li>
+            <li><a href="https://medium.com/@koheimikami/understanding-rendering-process-with-virtual-dom-in-vue-js-a6e602811782">Understanding Rendering Process with Virtual DOM In Vue.js</a> by Kohei Mikami,</li>
+            <li><a href="https://codingexplained.com/coding/front-end/vue-js/understanding-vue-js-reactivity">Understanding Vue.js reactivity</a> by Bo Andersen,</li>
+        </ol>
     </section>
 
     <section class="slide">
