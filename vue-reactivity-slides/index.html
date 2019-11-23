@@ -507,12 +507,12 @@
         <pre>
             <code>class Dep {</code>
             <code>  constructor () {</code>
-            <code>    this.dependencies = new Set()</code>
+            <code>    this.dependencies = new Set();</code>
             <code>  },</code>
-            <code>  depend () {  this.dependencies.add(update) },</code>
-            <code>  notify () {  this.dependencies.forEach(dep => dep()) }</code>
+            <code>  depend () {  this.dependencies.add(update); }</code>
+            <code>  notify () {  this.dependencies.forEach(dep => dep();) }</code>
             <code>}</code>
-            <code> <span class="comment">// update === () => { render() }</span></code>
+            <code> <span class="comment">// update === () => { render(); };</span></code>
         </pre>
     </section>
 
