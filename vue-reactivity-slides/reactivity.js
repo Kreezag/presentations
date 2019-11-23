@@ -4,6 +4,19 @@ let state = {
 }
 
 
+function addClick () {
+  state.count += 1
+}
+
+function removeClick () {
+  state.count -= 1
+}
+
+window.state = state
+window.addClick = addClick
+window.removeClick = removeClick
+
+
 // dependencies tracking
 class Dep {
   constructor () {
@@ -41,21 +54,8 @@ function observe (obj) {
   })
 }
 
-
-window.state = state
-window.addClick = addClick
-window.removeClick = removeClick
-
 observe(state)
 
-
-function addClick () {
-  state.count += 1
-}
-
-function removeClick () {
-  state.count -= 1
-}
 
 function render (count) {
   document.querySelector('#testId').innerText = `${count}`

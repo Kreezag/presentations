@@ -9,6 +9,13 @@
         .shower {
             --slide-ratio: calc(16 / 9);
         }
+        .none {
+            display: none;
+            opacity: 0;
+        }
+        .crossout {
+            text-decoration: line-through;
+        }
     </style>
     <script src="https://unpkg.com/vue"></script>
 </head>
@@ -118,8 +125,8 @@
             <li> Легковесный (~20КБ gzip в ядре и ~30КБ в роутингом и хранилищем)</li>
             <li>Относительно простой в изучении</li>
             <li>Возможность частичного внедрения</li>
-            <li>Реактивность</li>
             <li>Поддержка крупными компаниями (Alibaba)</li>
+            <li>Реактивность</li>
         </ul>
     </section>
 
@@ -139,6 +146,47 @@
         <h2 class="shout">
             Идея <br> реактивности
         </h2>
+    </section>
+
+
+    <section class="slide">
+        <h2>
+            Реактивность в js
+        </h2>
+        <pre>
+            <code>let a = { state: 1 };</code>
+            <code>let b = a;<span class="comment">// b === { state: 1 }</span></code>
+            <code> </code>
+            <code>a.state = 2;<span class="comment">// b === { state: 2 }</span></code>
+            <code></code>
+            <code>b.state + 1<span class="comment">// a === { state: 3 }, b === { state: 3 }, </span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Реактивность в js
+        </h2>
+        <p>
+            Потому что это один и тот же обьект в памяти
+        </p>
+        <pre>
+            <code> a === b <span class="comment">// true </span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Идея реактивности Vue.js
+        </h2>
+         <blockquote>
+             <p>
+                 Одна из наиболее примечательных возможностей Vue — это ненавязчивая реактивность.
+                 Модели представляют собой простые JavaScript-объекты.
+                 По мере их изменения обновляется и представление данных,
+                 благодаря чему управление состоянием приложения становится простым и очевидным.
+             </p>
+         </blockquote>
     </section>
 
     <section class="slide">
@@ -180,9 +228,7 @@
             ])
         }
       }).$mount('#vue1')
-
     </script>
-
 
     <section class="slide">
         <h2>
@@ -193,45 +239,25 @@
             <code>&lt;div id="counter">{{count}}&lt;/div></code>
             <code> </code>
             <code>new Vue({</code>
-            <code>  data: {</code>
-            <code>      count: 0</code>
-            <code>  },</code>
-            <code>}</code>
+            <code>  data: { count: 0 },</code>
+            <code>};</code>
         </pre>
     </section>
 
     <section class="slide">
         <h2>
-            Реактивность в js
+            Код счетчика
         </h2>
+
         <pre>
-            <code>let a = { state: 1 }</code>
-            <code>let b = a</code>
-            <code>console.log(b)<span class="comment">// { state: 1 }</span></code>
-            <code>a.state = 2</code>
-            <code>console.log(b)<span class="comment">// { state: 2 }</span></code>
+            <code>new Vue({</code>
+            <code>  data: { count: 0 },</code>
+            <code>  methods: {</code>
+            <code>    increment () { this.count +=1 };</code>
+            <code>    decrement () { this.count -= 1 };</code>
+            <code>  }</code>
+            <code>};</code>
         </pre>
-    </section>
-
-    <section class="slide">
-        <h2>
-            Реактивность в js
-        </h2>
-        <p>
-            Потому что это один и тот же обьект в памяти
-        </p>
-        <pre>
-            <code> a === b <span class="comment">// true </span></code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>
-            Реактивность в js
-        </h2>
-        <p>
-            Как сделать тоже самое для html?
-        </p>
     </section>
 
     <section class="slide">
@@ -246,11 +272,12 @@
             Мотивация автора
         </h2>
         <pre>
-            <code>let a = 1</code>
-            <code>let b = a * 10</code>
-            <code>console.log(b) <span class="comment">// b === 10</span></code>
-            <code>a = 2 <span class="comment">// a === 2</span></code>
-            <code>console.log(b) <span class="comment">// b === 10</span></code>
+            <code>let a = 1;</code>
+            <code>let b = a * 10;</code>
+            <code>console.log(b);<span class="comment">// b === 10</span></code>
+            <code> </code>
+            <code>a = 2;<span class="comment">// a === 2</span></code>
+            <code>console.log(b);<span class="comment">// b === 10</span></code>
         </pre>
     </section>
 
@@ -259,9 +286,12 @@
             Мотивация автора
         </h2>
         <pre>
+            <code>let a = 1;</code>
+            <code>let b = a * 10;</code>
+            <code> </code>
             <code>onAChange(() => {</code>
-            <code>  b = a * 10</code>
-            <code>})</code>
+            <code>  b = a * 10;</code>
+            <code>});</code>
         </pre>
     </section>
 
@@ -270,37 +300,99 @@
             Мотивация автора
         </h2>
         <pre>
-            <code>let a = 1</code>
-            <code>render(a)<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
-            <code>a++</code>
-            <code>onStateChange(() => render(a))<span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div></span></code>
+            <code>let a = 1;</code>
+            <code>let b = a * 10;</code>
+            <code> </code>
+            <code>onAChange(<mark>() => {</mark></code>
+            <code><mark>  b = a * 10;</mark></code>
+            <code><mark>}</mark>);</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>let a = 1;</code>
+            <code>let b = a * 10;</code>
+            <code> </code>
+            <code>onAChange(() => {</code>
+            <code>  b = a * 10;</code>
+            <code>  <mark>console.log(b);</mark></code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre>
+            <code>&lt;div class="cell b1">&lt;/div></code>
             <code> </code>
             <code>render = (a) => {</code>
-            <code>  document.querySelector('cell b1').innerText = a</code>
+            <code>  document.querySelector('cell b1').innerText = a;</code>
             <code>}</code>
+            <code> </code>
+            <code>let a = 1;</code>
+            <code>render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
         </pre>
     </section>
 
     <section class="slide">
-        <h2>
-            Мотивация автора
-        </h2>
+        <pre>
+            <code class="none"></code>
+            <code class="none"></code>
+            <code class="none"></code>
+            <code class="none"></code>
+            <code class="none"></code>
+            <code class="none"></code>
+            <code>let a = 1;</code>
+            <code>render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
+            <code> </code>
+            <code>a++</code>
+            <code> </code>
+            <code>onStateChange(() => render(a));</code>
+            <code><span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div></span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <pre>
             <code>let update</code>
             <code>const onStateChange((_update) => {</code>
-            <code>  update = _update</code>
+            <code>  update = _update;</code>
             <code>})</code>
             <code>const setState = (newState) => {</code>
-            <code>  state = newState</code>
-            <code>  update()</code>
-            <code>}</code>
+            <code>  state = newState;</code>
+            <code>  update();</code>
+            <code>};</code>
         </pre>
+    </section>
 
-        <br>
+    <section class="slide">
         <pre>
-            <code>render = (a) => {</code>
-            <code>  document.querySelector('cell b1').innerText = a</code>
-            <code>}</code>
+            <code>let state = { count: 0 };</code>
+            <code>let b;</code>
+            <code>onStateChange(() => { <span class="comment">// render === () => { b = state; }</span></code>
+            <code>  b = state.count;</code>
+            <code>  console.log(`log: variable b changed to ${b}`);</code>
+            <code>});</code>
+            <code>setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
+            <code> </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre>
+            <code>let state = { count: 0 };</code>
+            <code>let b;</code>
+            <code>onStateChange(() => { <span class="comment">// render === () => { b = state; }</span></code>
+            <code>  b = state.count;</code>
+            <code>  console.log(`log: variable b changed to ${b}`);</code>
+            <code>});</code>
+            <code class="crossout">setState({ count: 1 });</code>
+            <code>state.count = 1;<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
 
@@ -319,7 +411,7 @@
             Архитектура работы с состоянием
         </h2>
         <ul>
-            <li>Надзератель (observer) <code class="comment">// object -> get/set</code></li>
+            <li>Наблюдатель (observer) <code class="comment">// object -> get/set</code></li>
             <li>
                 Мониторинг зависимостей (dependencies tracking)
                 <br>
@@ -351,14 +443,14 @@
             Задачи:
         </h2>
         <pre>
-            <code>function observe(stateObject)</code>
+            <code>function observe(stateObject);</code>
             <code> </code>
             <code>class Dep {</code>
             <code>  depend(),</code>
             <code>  notify()</code>
-            <code>}</code>
+            <code>};</code>
             <code> </code>
-            <code>install(() => render(stateObject))</code>
+            <code>function install(() => render(stateObject));</code>
         </pre>
     </section>
 
@@ -370,13 +462,13 @@
         <pre>
             <code>function observe (object) {</code>
             <code>  Object.keys(obj).map((key) => {</code>
-            <code>    let value = obj[key]</code>
+            <code>    let value = obj[key];</code>
             <code>    Object.defineProperty(obj, key, {</code>
             <code>      get () { return value },</code>
             <code>      set (newValue) { value = newValue },</code>
-            <code>    })</code>
-            <code>  }</code>
-            <code>}</code>
+            <code>    });</code>
+            <code>  };</code>
+            <code>};</code>
         </pre>
     </section>
 
