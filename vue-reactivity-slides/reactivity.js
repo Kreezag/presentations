@@ -24,6 +24,10 @@ function render (count) {
 
 
 // dependencies tracking
+
+let activeUpdate = null
+
+
 class Dep {
   constructor () {
     this.dependencies = new Set()
@@ -46,35 +50,32 @@ const dep = new Dep()
 
 function observe (obj) {
   Object.keys(obj).map((key) => {
-    let value = obj[key]
+    let value = obj[key];
     Object.defineProperty(obj, key, {
       get () {
-        dep.depend()
+        dep.depend();
         return value
       },
       set (newValue) {
-        value = newValue
+        value = newValue;
         dep.notify()
       },
     })
   })
 }
 
-observe(state)
+observe(state);
 
-let activeUpdate = null
 
 function install (update) {
   function wrapperInstall () {
-    activeUpdate = wrapperInstall
-    update()
-    activeUpdate = null
+    activeUpdate = wrapperInstall;
+    update();
+    activeUpdate = null;
   }
-  wrapperInstall()
+  wrapperInstall();
 }
 
 install(() => {
-  render(state.count)
-})
-
-// render(state.count)
+  render(state.count);
+});
