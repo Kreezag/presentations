@@ -9,6 +9,10 @@
         .shower {
             --slide-ratio: calc(16 / 9);
         }
+
+        .slide {
+            padding-top: 50px;
+        }
         .none {
             display: none;
             opacity: 0;
@@ -41,6 +45,7 @@
         <h2 class="shout">
             Реактивный<br> Vue.js
             <p>Заглядываем под обшивку ракеты</p>
+            <p style="font-size: 30px">Кучук Андрей</p>
         </h2>
         <style>
             #main p {
@@ -50,7 +55,7 @@
         </style>
     </section>
 
-    <section class="slide">
+    <section class="slide ">
         <h2>
             Докладчик
         </h2>
@@ -64,6 +69,45 @@
         Github: <a href="https://github.com/Kreezag" alt="">https://github.com/Kreezag</a>
         <br>
         Twitter: <a href="https://twitter.com/Kreez_AG" alt="">https://twitter.com/Kreez_AG</a>
+
+        <img class="epicmax-logo" src="https://avatars2.githubusercontent.com/u/30595047?s=200&v=4" alt="">
+        <img class="rs-logo" src="https://rollingscopes.com/images/logo_rs2.svg" alt="">
+        <img class="rss-logo" src="https://avatars2.githubusercontent.com/u/11501370?s=280&v=4" alt="">
+    </section>
+
+    <style>
+        .epicmax-logo {
+            width: 180px;
+            position: absolute;
+            right: 100px;
+            top: 50px;
+            margin-top: -50px;
+        }
+        .rs-logo {
+            width: 200px;
+            position: absolute;
+            right: 105px;
+            top: 175px;
+            margin-left: -20px;
+        }
+        .rss-logo {
+            width: 180px;
+            position: absolute;
+            right: 100px;
+            top: 350px;
+        }
+    </style>
+
+    <section class="slide" >
+        <div>
+            <img class="cover width" src="./pictures/epicmax.png" alt="Vuestic" style="margin-top: 35px">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            Поговорим о технологиях
+        </h2>
     </section>
 
     <section class="slide" id="workshop">
@@ -143,6 +187,7 @@
             <li>Возможность частичного внедрения</li>
             <li>Поддержка крупными компаниями (Alibaba.com)</li>
             <li>Реактивность</li>
+            <li>Сообщество</li>
         </ul>
     </section>
 
@@ -351,6 +396,9 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
         <pre>
             <code>&lt;div class="cell b1">&lt;/div></code>
             <code> </code>
@@ -364,6 +412,9 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
         <pre>
             <code class="none"></code>
             <code class="none"></code>
@@ -382,6 +433,10 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+
         <pre>
             <code>let update</code>
             <code>const onStateChange((_update) => {</code>
@@ -395,6 +450,10 @@
     </section>
 
     <section class="slide">
+
+        <h2>
+            Мотивация автора
+        </h2>
         <pre>
             <code>let state = { count: 0 };</code>
             <code>let b;</code>
@@ -404,11 +463,13 @@
             <code>});</code>
             <code>setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
             <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
-            <code> </code>
         </pre>
     </section>
 
     <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
         <pre>
             <code>let state = { count: 0 };</code>
             <code>let b;</code>
@@ -416,8 +477,7 @@
             <code>  b = state.count;</code>
             <code>  console.log(`log: variable b changed to ${b}`);</code>
             <code>});</code>
-            <code class="crossout">setState({ count: 1 });</code>
-            <code>state.count = 1;<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code><span class="crossout">setState({ count: 1 });</span>  state.count = 1;</code>
             <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
@@ -622,12 +682,10 @@
 
     <section class="slide">
         <h2 class="shout">
-            Спасибо за внимание!
+            Спасибо!
         </h2>
-
-        <br>
-        <br>
     </section>
+
     <section class="slide">
         <h2 class="shout">
             Вопросы?
