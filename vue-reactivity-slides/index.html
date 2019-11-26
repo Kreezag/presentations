@@ -33,9 +33,13 @@
         }
     </style>
     <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 </head>
 <body class="shower list">
-
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
     <header class="caption">
         <h1>Реактивный Vue.js</h1>
         <p>Заглядываем под обшивку ракеты</p>
@@ -226,11 +230,11 @@
         </h2>
         <pre>
             <code>let a = { state: 1 };</code>
-            <code>let b = a;<span class="comment">// b === { state: 1 }</span></code>
+            <code>let b = a;<span class="comment nohighlight">// b === { state: 1 }</span></code>
             <code> </code>
-            <code>a.state = 2;<span class="comment">// b === { state: 2 }</span></code>
-            <code></code>
-            <code>b.state + 1<span class="comment">// a === { state: 3 }, b === { state: 3 }, </span></code>
+            <code>a.state = 2;<span class="comment nohighlight">// b === { state: 2 }</span></code>
+            <code> </code>
+            <code>b.state + 1<span class="comment nohighlight">// a === { state: 3 }, b === { state: 3 }, </span></code>
         </pre>
     </section>
 
@@ -242,7 +246,7 @@
             Потому что это один и тот же обьект в памяти
         </p>
         <pre>
-            <code> a === b <span class="comment">// true </span></code>
+            <code> a === b <span class="comment nohightlight">// true </span></code>
         </pre>
     </section>
 
@@ -345,10 +349,10 @@
         <pre>
             <code>let a = 1;</code>
             <code>let b = a * 10;</code>
-            <code>console.log(b);<span class="comment">// b === 10</span></code>
+            <code class="nohighlight">console.log(b);<span class="comment">// b === 10</span></code>
             <code> </code>
-            <code>a = 2;<span class="comment">// a === 2</span></code>
-            <code>console.log(b);<span class="comment">// b === 10</span></code>
+            <code>a = 2;<span class="comment nohighlight">// a === 2</span></code>
+            <code class="nohighlight">console.log(b);<span class="comment">// b === 10</span></code>
         </pre>
     </section>
 
@@ -407,7 +411,7 @@
             <code>}</code>
             <code> </code>
             <code>let a = 1;</code>
-            <code>render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
+            <code class="nohighlight">render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
         </pre>
     </section>
 
@@ -423,12 +427,12 @@
             <code class="none"></code>
             <code class="none"></code>
             <code>let a = 1;</code>
-            <code>render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
+            <code>render(a);<span class="comment nohightlight">// &lt;div class="cell b1">1&lt;/div></span></code>
             <code> </code>
             <code>a++</code>
             <code> </code>
             <code>onAChange(() => render(a));</code>
-            <code><span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div></span></code>
+            <code class="nohighlight"><span class="comment">// &lt;div class="cell b1"&gt;2&lt;/div></span></code>
         </pre>
     </section>
 
@@ -461,8 +465,8 @@
             <code>  b = state.count;</code>
             <code>  console.log(`log: variable b changed to ${b}`);</code>
             <code>});</code>
-            <code>setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
-            <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
+            <code class="nohighlight">setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code class="nohighlight"><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
 
@@ -473,12 +477,12 @@
         <pre>
             <code>let state = { count: 0 };</code>
             <code>let b;</code>
-            <code>onStateChange(() => { <span class="comment">// render === () => { b = state; }</span></code>
+            <code>onStateChange(() => { <span class="comment nohightlight">// render === () => { b = state; }</span></code>
             <code>  b = state.count;</code>
             <code>  console.log(`log: variable b changed to ${b}`);</code>
             <code>});</code>
             <code><span class="crossout">setState({ count: 1 });</span>  state.count = 1;</code>
-            <code><span class="comment">// update() => onStateChange() => console.log()</span></code>
+            <code class="nohighlight"><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
 
