@@ -427,7 +427,7 @@
             <code class="none"></code>
             <code class="none"></code>
             <code>let a = 1;</code>
-            <code>render(a);<span class="comment nohightlight">// &lt;div class="cell b1">1&lt;/div></span></code>
+            <code class="nohighlight">render(a);<span class="comment">// &lt;div class="cell b1">1&lt;/div></span></code>
             <code> </code>
             <code>a++</code>
             <code> </code>
@@ -442,7 +442,7 @@
         </h2>
 
         <pre>
-            <code>let update</code>
+            <code>let update;</code>
             <code>const onStateChange((_update) => {</code>
             <code>  update = _update;</code>
             <code>})</code>
@@ -454,7 +454,39 @@
     </section>
 
     <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
 
+        <pre>
+                <code>let <mark>update;</mark></code>
+                <code>const onStateChange((<mark>_update</mark>) => {</code>
+                <code>  <mark>update = _update;</mark></code>
+                <code>})</code>
+                <code>const setState = (newState) => {</code>
+                <code>  state = newState;</code>
+                <code>  <mark>update();</mark></code>
+                <code>};</code>
+            </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Мотивация автора
+        </h2>
+        <pre>
+            <code>let state = { count: 0 };</code>
+            <code>let b;</code>
+            <code>onStateChange(<mark>() => {</mark> <span class="comment">// render === () => { b = state; }</span></code>
+            <code>  <mark>b = state.count;</mark></code>
+            <code>  <mark>console.log(`log: variable b changed to ${b}`);</mark></code>
+            <code><mark>}</mark>);</code>
+            <code class="nohighlight">setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code class="nohighlight"><span class="comment">// update() => onStateChange() => console.log()</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <h2>
             Мотивация автора
         </h2>
@@ -465,7 +497,7 @@
             <code>  b = state.count;</code>
             <code>  console.log(`log: variable b changed to ${b}`);</code>
             <code>});</code>
-            <code class="nohighlight">setState({ count: 1 });<span class="comment"> // log: variable b changed to 1 </span></code>
+            <code class="nohighlight"><mark>setState({ count: 1 });</mark><span class="comment"> // log: variable b changed to 1 </span></code>
             <code class="nohighlight"><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
@@ -481,7 +513,7 @@
             <code>  b = state.count;</code>
             <code>  console.log(`log: variable b changed to ${b}`);</code>
             <code>});</code>
-            <code><span class="crossout">setState({ count: 1 });</span>  state.count = 1;</code>
+            <code><span class="crossout">setState({ count: 1 });</span>  <mark>state.count = 1;</mark></code>
             <code class="nohighlight"><span class="comment">// update() => onStateChange() => console.log()</span></code>
         </pre>
     </section>
@@ -501,13 +533,21 @@
             Архитектура работы с состоянием
         </h2>
         <ul>
-            <li>Наблюдатель (observer) <code class="comment">// object -> get/set</code></li>
+            <li>
+                Наблюдатель (observer)
+                <br>
+                <code class="comment">// object -> get/set</code>
+            </li>
             <li>
                 Мониторинг зависимостей (dependencies tracking)
                 <br>
                 <code class="comment">// stateChange -> notify</code>
             </li>
-            <li>Функция отрисовки (render)<code class="comment">// render()</code></li>
+            <li>
+                Функция, которая вызовет отрисовку
+                <br>
+                <code class="comment">// install(() => render())</code>
+            </li>
         </ul>
     </section>
 
@@ -515,17 +555,76 @@
         <h2>
             Как работает Vue (абстрактно)
         </h2>
-
         <pre>
             <code>state = { a: 5 }</code>
             <code>observe(state)</code>
             <code><span class="comment">// a -> a: { get () {}, set () => {} }</span></code>
-            <code>render(state) <span class="comment">// depend (state.a) </span></code>
-            <code>state.a = 10 </code>
+            <code>render(state); <span class="comment">// depend (state.a) </span></code>
+            <code>state.a = 10; </code>
             <code><span class="comment">// notify () => depends.forEach(dep => dep()) )</span> </code>
             <code><span class="comment">// => render()</span></code>
         </pre>
+    </section>
 
+    <section class="slide">
+        <h2>
+            Как работает Vue (абстрактно)
+        </h2>
+        <pre>
+                <code>state = { a: 5 }</code>
+                <code><mark>observe(state)</mark></code>
+                <code><span class="comment">// a -> a: { get () {}, set () => {} }</span></code>
+                <code>render(state); <span class="comment">// depend (state.a) </span></code>
+                <code>state.a = 10; </code>
+                <code><span class="comment">// notify () => depends.forEach(dep => dep()) )</span> </code>
+                <code><span class="comment">// => render()</span></code>
+            </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Как работает Vue (абстрактно)
+        </h2>
+        <pre>
+            <code>state = { a: 5 }</code>
+            <code>observe(state)</code>
+            <code><mark><span class="comment">// a -> a: { get () {}, set () => {} }</span></mark></code>
+            <code>render(state); <span class="comment">// depend (state.a) </span></code>
+            <code>state.a = 10; </code>
+            <code><span class="comment">// notify () => depends.forEach(dep => dep()) )</span> </code>
+            <code><span class="comment">// => render()</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Как работает Vue (абстрактно)
+        </h2>
+        <pre>
+            <code>state = { a: 5 }</code>
+            <code>observe(state)</code>
+            <code><span class="comment">// a -> a: { get () {}, set () => {} }</span></code>
+            <code>render(state); <span class="comment">// depend (state.a) </span></code>
+            <code><mark>state.a = 10; </mark> </code>
+            <code><span class="comment">// notify () => depends.forEach(dep => dep()) )</span> </code>
+            <code><span class="comment">// => render()</span></code>
+        </pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>
+            Как работает Vue (абстрактно)
+        </h2>
+        <pre>
+            <code>state = { a: 5 }</code>
+            <code>observe(state)</code>
+            <code><span class="comment">// a -> a: { get () {}, set () => {} }</span></code>
+            <code>render(state); <span class="comment">// depend (state.a) </span></code>
+            <code>state.a = 10; </code>
+            <code><mark><span class="comment">// notify () => depends.forEach(dep => dep()) )</span></mark></code>
+            <code><mark><span class="comment">// => render()</span></mark></code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -545,7 +644,7 @@
     </section>
 
     <section class="slide">
-        <h2 id="observe">
+        <h2 class="observe">
             Observe
         </h2>
 
@@ -561,11 +660,29 @@
             <code>};</code>
         </pre>
         <style>
-            #observe {
+            .observe {
                 font-size: 40px;
                 margin-top: -15px;
             }
         </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="observe">
+            Observe
+        </h2>
+
+        <pre>
+            <code>function observe (object) {</code>
+            <code>  Object.keys(obj).map((key) => {</code>
+            <code><mark>    let value = obj[key];</mark></code>
+            <code>    Object.defineProperty(obj, key, {</code>
+            <code>      get () { return value },</code>
+            <code>      set (newValue) { value = newValue },</code>
+            <code>    });</code>
+            <code>  };</code>
+            <code>};</code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -584,6 +701,23 @@
             <code> <span class="comment">// update === () => { render(); };</span></code>
         </pre>
     </section>
+
+<section class="slide">
+    <h2>
+        Dep
+    </h2>
+
+    <pre>
+            <code>class Dep {</code>
+            <code>  constructor () {</code>
+            <code>    this.dependencies = new Set();</code>
+            <code>  },</code>
+            <code>  depend () {  <mark>this.dependencies.add(update);</mark> }</code>
+            <code>  notify () {  <mark>this.dependencies.forEach(dep => dep();</mark>) }</code>
+            <code>}</code>
+            <code> <span class="comment">// update === () => { render(); };</span></code>
+        </pre>
+</section>
 
     <section class="slide">
         <h2>
