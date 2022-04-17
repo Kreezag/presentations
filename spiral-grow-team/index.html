@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
 
   <style>
-
     * {
       --color-key: #f2df00;
       --diagonal: linear-gradient( 135deg, var(--color-key) 50%, rgba(0, 0, 0, 0.1) 50% );
@@ -33,60 +32,98 @@
   </style>
 </head>
 <body class="shower list">
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
+
   <header class="caption">
-      <h1>Как растить команду</h1>
-      <p>без вреда ментальному здоровью</p>
+    <h1>Как растить команду</h1>
+    <p>без вреда ментальному здоровью</p>
   </header>
 
   <section class="slide" id="main">
     <style>
+      #main {
+        position: relative;
+      }
+
+      #main .overlap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: rgba(0,0,0,.2);
+      }
+
+      #main * {
+      }
+
+      #main h2,
       #main p {
-        margin: 30px 0 0;
-        font-size: 50px;
+        color: #fff;
+        font-size: 60px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      #main p {
+        font-size: 40px;
       }
     </style>
 
-    <h2 class="shout">
+    <img class="cover w" src="pictures/download.jpeg" alt="">
+
+
+    <h2 class="cover">
       Как растить команду
-        <p>без вреда ментальному здоровью</p>
+
+      <br>
+      <br>
+      <p>* без вреда ментальному здоровью</p>
     </h2>
+
+    <div class="overlap"></div>
   </section>
 
-  <section class="slide ">
-    <style>
-      .logo1 {
-        top: 50px !important;
-        right: 50px !important;
-        border-radius: 100%;
-      }
 
-      .logo2 {
-        right: 50px !important;
-      }
+  <style>
+    .logo1 {
+      top: 50px !important;
+      right: 50px !important;
+      border-radius: 100%;
+    }
 
-      .logo3 {
-        bottom: 50px !important;
-        right: 50px !important;
-      }
-    </style>
+    .logo2 {
+      right: 50px !important;
+    }
 
+    .logo3 {
+      bottom: 50px !important;
+      right: 50px !important;
+    }
+  </style>
+
+  <section class="slide">
     <h2>
       Познакомимся?
     </h2>
-    <ul>
+    <p>
       Кучук Андрей
-      <li>Team Lead CMS team (Shopify department)</li>
-      <li>Ментор Rolling Scopes School</li>
-      <li>Участик и докладчик Rolling Scopes community</li>
+
+      <br>
+      😎 Team Lead CMS team (Shopify department)
+      <br>
+      🤯 Ментор Rolling Scopes School
+      <br>
+      🤗 Участик и докладчик Rolling Scopes community
+      <br>
+    </p>
+    <ul>
+
     </ul>
 
     Github: <a href="https://github.com/Kreezag" alt="">https://github.com/Kreezag</a>
     <br>
     Twitter: <a href="https://twitter.com/Kreez_AG" alt="">https://twitter.com/Kreez_AG</a>
-
 
     <img class="place t r logo1" width="140" src="https://avatars.githubusercontent.com/u/13301570?s=400&u=06dd781fd828a39296b4a5ded188c9623ac85561&v=4" alt="">
     <img class="place r logo2" width="150" src="https://avatars2.githubusercontent.com/u/11501370?s=280&v=4" alt="">
@@ -98,17 +135,21 @@
     <h2>
        О чем поговорим?
     </h2>
-    <ul>
-      <li>Зачем вообще это нужно?</li>
-      <li>Кому это нужно?</li>
-      <li>Как это выглядит и что можно сделать?</li>
-      <li>Несколько советов</li>
-      <br>
-      <br>
-      <li>Про ментальное здоровье тут:</li>
-    </ul>
 
-    <img class='place b' width="150" src="./pictures/YT-qr.png" alt="" style="bottom: 60px; transform: translate(-20%, 0);">
+    <p>
+      🤷 Зачем вообще это нужно?
+      <br>
+      🤷‍♂️ Кому это нужно?
+      <br>
+      🤷‍♀️️ Как это выглядит и что можно сделать?
+      <br>
+      🧑‍🏫 Несколько практических советов
+    </p>
+
+    <br>
+    <p>Про ментальное здоровье:</p>
+
+    <img class='place b' width="150" src="./pictures/YT-qr.png" alt="" style="bottom: 60px; transform: translate(-50%, 0);">
   </section>
 
 
@@ -117,15 +158,19 @@
       Зачем это нужно?
     </h2>
 
-    <ul>
-      <li>Хорошие разработчики дорогие</li>
-      <li>Для больших и сложных проектов нужны сильные спецы</li>
-      <li>Обучить новичка проще чем <strike>найти</strike> заинтересовать эксперта</li>
-      <li>Рост разработчиков - тоже часть культуры</li>
-    </ul>
+    <p>
+      💰 Хорошие разработчики дорогие
+      <br>
+      💪 Для больших и сложных проектов нужны сильные спецы
+      <br>
+      👶 ‍Обучить новичка проще чем <strike>найти</strike> заинтересовать эксперта
+      <br>
+      🧩️️ Рост разработчиков - тоже часть культуры
+    </p>
   </section>
 
-  <section class="slide">
+
+  <section class="slide ">
     <h2 style="position: relative; z-index: 2;">
       Кому это нужно?
     </h2>
@@ -134,22 +179,11 @@
   </section>
 
   <section class="slide">
-    <h2 style="position: relative; z-index: 2;">
-      Кому это нужно?
-    </h2>
-
-    <img class='place' width="400" src="./pictures/mentimeter_qr_code_v1.png" alt="">
-  </section>
-
-  <section class="slide">
-    <img class='cover w b' src="pictures/is-fine.jpeg" alt="">
-  </section>
-
-
-  <section class="slide">
     <h2>
       Кому это нужно?
     </h2>
+
+    <img class='place t r' style="z-index: 2;" width="200" src="./pictures/mentimeter_qr_code_v1.png" alt="">
 
     <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
       <iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/829cae11da6a0588da19ed46ab949884/16137dba7b11' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe>
@@ -157,18 +191,30 @@
   </section>
 
   <section class="slide">
+    <img class='cover w b' src="pictures/is-fine.jpeg" alt="">
+  </section>
+
+  <section class="slide">
+    <iframe class="cover" width="1000" height="500" src="https://www.youtube.com/embed/KPON7NVXCXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+
+  <section class="slide">
     <h2>
       Кому это нужно?
     </h2>
 
-    <ol>
-      <li>Компании</li>
-      <li>Команде</li>
-      <li>Новичкам (Juniors)</li>
-      <li>Старшим рзработчикам (об этом через пару слайдов)</li>
-    </ol>
     <p>
-      Сильнее команда - интереснее проекты
+      👉 Компании
+      <br>
+      👉 Команде
+      <br>
+      👉 Новичкам (Juniors)
+      <br>
+      👉 Старшим рзработчикам (об этом через пару слайдов)
+      <br>
+    </p>
+    <p>
+      💪 Сильнее команда - интереснее проекты
     </p>
   </section>
 
@@ -187,63 +233,51 @@
   </section>
 
   <section class="slide">
-    <h2>
-      Направления роста (голосовалка)
-    </h2>
-
-  </section>
-
-  <section class="slide">
-    <h2>
-      Направления роста
+    <h2 style="position: relative; z-index: 2;">
+      Какие качества развивать?
     </h2>
 
     <img class='place' src="pictures/skills.png" alt="">
   </section>
 
-<!--  <section class="slide">-->
-<!--    <h2>-->
-<!--      Софт скилы-->
-<!--    </h2>-->
+  <section class="slide">
+    <h2 style="position: relative; z-index: 2;">
+      Какие качества развивать?
+    </h2>
 
-<!--    <ul>-->
-<!--      <li>Здоровое общение с командой, не токсить</li>-->
-<!--      <li>Общение с заказчиком (владение Ангийским)</li>-->
-<!--      <li>Умение работать с информацией, работа с требованиями и пр</li>-->
-<!--      <li>Ответственность за принятые решение</li>-->
-<!--      <li>Умение обьяснять технчиеские решения не техническому человеку</li>-->
-<!--      <li>Шарить знания с командой</li>-->
-<!--    </ul>-->
-<!--  </section>-->
+    <img class='place t r' style="z-index: 2;" width="200" src="./pictures/mentimeter_qr_code_v2.png" alt="">
 
+    <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'>
+      <iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/829cae11da6a0588da19ed46ab949884/16137dba7b11' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe>
+    </div>
+  </section>
 
   <section class="slide">
-    <h2>
+    <br>
+    <h2 style="color: #fff;">
       Хард скилы
     </h2>
+
+    <img class='cover h' src="./pictures/hard-skills.jpeg" alt="">
   </section>
-
-  <section class="slide">
-    <h2>
-      Хард скилы. Что нужно качать?
-    </h2>
-
-    <img class='place' width="400" src="./pictures/mentimeter_qr_code_v2.png" alt="">
-  </section>
-
 
   <section class="slide">
     <h2>
       Хард скилы
     </h2>
 
-    <ul>
-      <li>Умение разбивать задачи на части</li>
-      <li>Владение языком программирования</li>
-      <li>Знания подходов и полезных практик, умение их применить</li>
-      <li>Знание инструментов и библиотек</li>
-      <li>Понимание смежных областей</li>
-    </ul>
+    <p>
+      💪 Умение разбивать задачи на части
+      <br>
+      💪🏻 Владение языком программирования
+      <br>
+      💪🏼 Знания подходов и полезных практик, умение их применить
+      <br>
+      💪🏽 Знание инструментов и библиотек
+      <br>
+      💪🏾 Понимание смежных областей
+      <br>
+    </p>
   </section>
 
   <section class="slide">
@@ -260,86 +294,150 @@
 
   <section class="slide">
     <h2>
+      Как расти быстрее?
+    </h2>
+
+    <p>
+      😎 Стать ментором (найти ментора)
+      <br>
+      🤔 Обсуждать архитектуры приложения, планирование
+      <br>
+      😉 Общение и обмен идей
+      <br>
+      🧐 Встречи с обсуждением технологий
+      <br>
+      🥳 Митапы, митинги, конференции, курсы
+      <br>
+      🤯 Брать больше обязанностей и ответственности
+      <br>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>
       Менторство
     </h2>
 
     <img class='place' src="pictures/yoda.jpeg" width="450" alt="">
   </section>
 
-
   <section class="slide">
     <h2>
-      Как расти быстрее?
+      Когда это может работать?
     </h2>
 
-    <ul>
-      <li>Стать его ментором</li>
-      <li>Совместное планирование</li>
-      <li>Обсуждение архитектуры приложение над которым работаете</li>
-      <li>Общение и обмен идей в пулреквестах</li>
-      <li>Встречи с обсуждением технологий</li>
-      <li>Митапы, митинги, конференции, курсы</li>
-    </ul>
+    <p>
+      👨‍💻 Постоянные команды
+      <br>
+      👨‍💼 Прозрачные процессы
+      <br>
+      ☝️ Обратная связь в обе стороны
+      <br>
+      ❤️ Индивидуальный подход (<a href="https://www.ozon.ru/product/pyat-yazykov-lyubvi-aktualno-dlya-vseh-a-ne-tolko-dlya-supruzheskih-par-chepmen-geri-533521857/?sh=nQoWAqsE-A">пять языков любви</a>)
+      <br>
+      <h1>🙏 ДОВЕРИЕ !</h1>
+    </p>
+
+    <p>Про налог на доверие: </p>
+
+    <img class='place b' width="150" src="./pictures/confidence.png" alt="" style="bottom: 60px; transform: translate(-100%, 0);">
+  </section>
+
+  <style>
+    .mentor {
+      background: #000;
+    }
+  </style>
+
+  <section class="slide mentor">
+    <img class="cover h" src="pictures/mentor.jpeg" alt="">
   </section>
 
   <section class="slide">
     <h2>
-      Какда это может работать?
-    </h2>
-
-    <ul>
-      <li>Постоянные команды</li>
-      <li>Прозрачные процессы</li>
-      <li>Обратная связь в обе стороны</li>
-      <li><h1>ДОВЕРИЕ !</h1></li>
-    </ul>
-
-    ссылка на видо "налог на доверие"
-  </section>
-
-
-  <section class="slide">
-    <h2 class="shout">
-      Менторам на заметку
-    </h2>
-  </section>
-
-  <section class="slide">
-    <h2>
-      Менторам на заметку
+      Для менторов
     </h2>
 
     <ul>
       <li>Все люди лгут</li>
-      <li>Условия, когда легче сделать, чем не сделать</li>
-      <li>Когда человек начинает понимать он будет спорить  - это нормально</li>
-      <li>не смотрите на слова, смотрите на дела</li>
-      <li>благодирите людей но не рассчитывайте на благодарность</li>
-      <li>морковка должна быть не только спереди но и сзади</li>
-      <li>тим лиду тоже нужно развиваться</li>
-      <li>иногда придется все переделать. Иногда несколько раз</li>
-      <li>правильно сказать - не гарантирует что правильно поймут (ссылка на доклад)</li>
-      <li>Если понял - обьясни совими словами.</li>
-      <li>Нужет человек, у которого можно спросить</li>
-      <li>благодарность не нужна, нужен результат</li>
+      <li>Условия, когда легче сделать, чем нет</li>
+      <li>Не смотрите на слова, смотрите на дела</li>
+      <li>Морковка должна быть не только спереди, но и сзади</li>
+      <li>Правильно сказать !== правильно понять (ссылка на доклад)</li>
+      <li>Не рассчитывайте на благодарность, фокус на результат</li>
+      <li>Ментору тоже нужно развиваться</li>
     </ul>
+  </section>
 
+  <style>
+    .mentee {
+      background: #000;
+    }
+
+    .mentee h2 {
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+
+  <section class="slide mentee">
+    <img class="cover h" src="pictures/mentee.jpeg" alt="">
   </section>
 
   <section class="slide">
-      <h2>
-          Материалы
-      </h2>
-      <ol>
-          <li></li>
-          <li></li>
-      </ol>
+    <h2>
+      Для менти
+    </h2>
+
+    <ul>
+      <li>Непонятно? - спроси!</li>
+      <li>Понятно - объясни своими словами.</li>
+      <li>Цени время другого человека. Сначала погугли</li>
+      <li>Иногда придется все переделать. Иногда несколько раз</li>
+      <li>Ментор ничего не должен. Ответственность за рост - на тебе</li>
+      <li>Благодари людей</li>
+    </ul>
   </section>
 
   <section class="slide">
-      <h2 class="shout">
-          Спасибо!
-      </h2>
+    <h2 class="shout">
+      Спасибо!
+    </h2>
+  </section>
+
+
+  <section class="slide">
+    <h2>
+        Материалы
+    </h2>
+
+    <ol>
+      <li>
+        <a href="https://www.youtube.com/watch?v=5iygkx-XfrY">Про грамотные формулировки</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=TSh7Uz68PeI">Про грамотные формулировки</a>
+      </li>
+      <li>
+        <a href="https://www.ozon.ru/product/pyat-yazykov-lyubvi-aktualno-dlya-vseh-a-ne-tolko-dlya-supruzheskih-par-chepmen-geri-533521857/?sh=nQoWAqsE-A">Пять языков любви</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/post/586282/">Как тимлиду можно развивать команду</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=YrJBKqIH3RM">Как культура компании влияет на рост</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/company/yandex/blog/476580/">Горизонтальный и вертикальный рост</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=KPON7NVXCXM&">Видео про котика</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=wONsCnYnQb0">Видео про доверие</a>
+      </li>
+    </ol>
   </section>
 
   <section class="slide">
@@ -353,6 +451,5 @@
   <script src="node_modules/shower-core/shower.min.js"></script>
 
   <!-- Copyright © 2019 Yours Truly, Famous Inc. -->
-
 </body>
 </html>
