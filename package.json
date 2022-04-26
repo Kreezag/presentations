@@ -1,0 +1,19 @@
+{
+  "name": "presentations",
+  "version": "2.0.0",
+  "description": "my presentations",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd spiral-grow-team && npm install && cd ../ && cd vue-reactivity-slides && npm install && cd ../"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kreezag/presentations.git"
+  },
+  "author": "Andrew Kuchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kreezag/presentations/issues"
+  },
+  "homepage": "https://github.com/Kreezag/presentations#readme"
+}
