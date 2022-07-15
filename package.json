@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Kreezag/presentations/issues"
   },
-  "homepage": "https://github.com/Kreezag/presentations#readme"
+  "homepage": "https://github.com/Kreezag/presentations#readme",
+  "dependencies": {
+    "@shower/cli": "^0.3.1",
+    "shower": "^2.7.1"
+  }
 }
