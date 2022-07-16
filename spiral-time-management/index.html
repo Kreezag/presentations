@@ -8,28 +8,312 @@
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
+            --color-key: #fff;
+            --diagonal: linear-gradient( 135deg, #FFF 50%, #333 50% );
+          color: #666 !important;
+        }
+
+        .caption h1 {
+          color: #666;
+        }
+
+        .caption p {
+          color: #666;
+        }
+
+        .slide a {
+          color: #333;
         }
     </style>
 </head>
+
 <body class="shower list">
+  <header class="caption">
+    <h1>
+      Как все успевать
+    </h1>
+    <p>
+      или тайное искусство управления временем
+    </p>
+  </header>
 
-    <header class="caption">
-        <h1>Shower Presentation Engine</h1>
-        <p>Yours Truly, Famous Inc.</p>
-    </header>
+  <style>
+    #main {
+      position: relative;
+    }
 
-    <section class="slide">
-        <!-- Create your first slide -->
-    </section>
+    #main .overlap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(0,0,0,.2);
+    }
 
-    <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
+    #main h2,
+    #main p {
+      color: #fff;
+      font-size: 80px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
 
-    <div class="progress"></div>
+    #main p {
+      font-size: 40px;
+    }
 
-    <script src="node_modules/@shower/core/dist/shower.js"></script>
-    <!-- Copyright © 2022 Yours Truly, Famous Inc. -->
+    .bg {
+      background: #000;
+    }
 
-</body>
+    .circle {
+      border-radius: 100%;
+    }
+
+    .columns {
+      height: 80%;
+    }
+
+    .shout {
+      color: #666 !important;
+    }
+
+    .no-number:after {
+      opacity: 0;
+    }
+
+    .slide.shout div {
+      position: relative;
+    }
+
+    .white {
+      color: #fff !important;
+      text-shadow: 0 0 20px #666;
+
+    }
+  </style>
+
+  <section class="slide no-number" id="main">
+    <img class="cover w" src="pictures/time3.jpeg" alt="">
+
+    <h2 class="cover">
+      Как все успевать
+      <br>
+      <br>
+      <p>
+        или тайное искусство управления временем
+      </p>
+    </h2>
+
+    <div class="overlap"></div>
+  </section>
+
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Кто я такой?
+        </h2>
+
+        <p>
+          😀 Кучук Андрей
+          <br>
+          🤩 Team Lead уже 1.5 года
+          <br>
+          😎 В IT больше 7 лет
+          <br>
+          🤯 Имею диплом психолога
+          <br>
+          💩 Самоучка
+          <br>
+        </p>
+      </div>
+
+      <div>
+        <img class="place r t circle" width="200" src="https://avatars.githubusercontent.com/u/13301570?s=400&u=06dd781fd828a39296b4a5ded188c9623ac85561&v=4" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Где меня найти?
+        </h2>
+        <p>
+          Github: <a href="https://github.com/Kreezag" alt="">Kreezag</a>
+          <br>
+          Telegram: @Kreez_AG
+        </p>
+      </div>
+
+      <div>
+        <img class="place r t circle" width="200" src="https://avatars.githubusercontent.com/u/13301570?s=400&u=06dd781fd828a39296b4a5ded188c9623ac85561&v=4" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide no-number bg">
+    <h2 class="white">
+      Как все успевать?
+    </h2>
+    <img class='cover h' src="pictures/time1.jpeg" alt="">
+  </section>
+
+  <section class="slide no-number bg">
+    <img class='cover h' src="pictures/time2.jpeg" alt="">
+  </section>
+
+  <section class="slide no-number bg">
+    <img class='cover h' src="pictures/time3.jpeg" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>
+      Как все успевать?
+    </h2>
+  </section>
+
+  <section class="slide">
+    <h2>
+      Как все успевать?
+    </h2>
+
+    <p>
+      Короткий ответ: никак!
+    </p>
+  </section>
+
+  <section class="slide no-number bg">
+    <h2 class="white">
+      Кто знает этого человека?
+    </h2>
+    <img class='cover h' src="pictures/dorofeev.jpeg" alt="">
+  </section>
+
+  <section class="slide no-number bg">
+    <h2 class="white">
+      Кто читал эти книги?
+    </h2>
+    <img class='cover h' src="pictures/books.jpeg" alt="">
+  </section>
+
+  <section class="slide no-number bg">
+    <img class='cover h' src="pictures/fuel.png" alt="">
+  </section>
+
+  <section class="slide no-number bg">
+    <h2 class="white">
+      Кто читал эту книгу?
+    </h2>
+
+    <img class='cover h' src="pictures/red-tablet.jpeg" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>
+      2 знания которые помогут все успеть
+    </h2>
+  </section>
+
+  <section class="slide">
+    <h2>
+      2 знания которые помогут все успеть
+    </h2>
+
+    <p>
+      1. Понимание себя и своих целей
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>
+      2 знания которые помогут все успеть
+    </h2>
+
+    <p>
+      1. Понимание себя и своих целей
+    </p>
+
+    <p>
+      2. Понимание того, как устроен наш мозг
+    </p>
+  </section>
+
+
+  <section class="slide bg">
+    <img class='cover h' src="pictures/history.jpeg" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>
+      Материалы 1
+    </h2>
+
+    <ol>
+      <li>
+        <a href="https://habr.com/ru/post/293190/">10 советов по тайм менеджменту</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/post/529982/">Приложения дл личной эффективности</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/company/smartprogress/blog/241905/">О мотивации, прокрастинации, тайм-менеджменте и других модных, но бесполезных вещах</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/post/297806/">Всё, что вам нужно знать о тайм-менеджменте</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/post/193632/">Любовь и ненависть к тайм-менеджменту</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=QBZff_BrK2k">Про прокрастинацию</a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>
+      Материалы 2
+    </h2>
+
+    <ol>
+      Техники:
+      <li>
+        <a href="https://habr.com/ru/company/click/blog/651393/">Тестируем популярные методы тайм-менеджмента. ч1</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/company/click/blog/656109/">Тестируем популярные методы тайм-менеджмента. ч2</a>
+      </li>
+      <li>
+        <a href="https://habr.com/ru/company/click/blog/662031/">Тестируем популярные методы тайм-менеджмента. ч3</a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide shout">
+    <h2 class="shout">
+      Спасибо!
+    </h2>
+  </section>
+
+  <div class="progress"></div>
+
+  <script src="node_modules/@shower/core/dist/shower.js"></script>
+
+  <!-- Copyright © 2019 Yours Truly, Famous Inc. -->
+  </body>
 </html>
