@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shower Presentation Engine</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
-    <style>
-        .shower {
-            --slide-ratio: calc(16 / 9);
-            --color-key: #fff;
-            --diagonal: linear-gradient( 135deg, #FFF 50%, #333 50% );
-          color: #666 !important;
-        }
-
-        .caption h1 {
-          color: #666;
-        }
-
-        .caption p {
-          color: #666;
-        }
-
-        .slide a {
-          color: #333;
-        }
-    </style>
-</head>
-
-<body class="shower list">
-  <header class="caption">
-    <h1>
-      Как все успевать
-    </h1>
-    <p>
-      или тайное искусство управления временем
-    </p>
-  </header>
-
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css">
   <style>
+    @font-face {
+      font-family: "Doom";
+      src: url('./EternalBattleBold-vm5rD.ttf') format("truetype");
+    }
+
+    .shower {
+        --slide-ratio: calc(16 / 9);
+        --color-key: #fff;
+        --diagonal: linear-gradient( 135deg, #FFF 50%, #333 50% );
+      color: #666 !important;
+    }
+
+    .caption h1 {
+      color: #666;
+    }
+
+    .caption p {
+      color: #666;
+    }
+
+    .slide a {
+      color: #333;
+    }
     #main {
       position: relative;
     }
@@ -91,11 +82,37 @@
     .white {
       color: #fff !important;
       text-shadow: 0 0 20px #666;
+    }
 
+    .center {
+      text-align: center;
+    }
+
+    .contain {
+      width: 100%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .doom {
+      font-family: Doom, sans-serif;
+      position: relative;
+      top: -50px;
     }
   </style>
+</head>
 
-  <section class="slide no-number" id="main">
+<body class="shower list">
+  <header class="caption">
+    <h1>
+      Как все успевать
+    </h1>
+    <p>
+      или тайное искусство управления временем
+    </p>
+  </header>
+
+  <section class="slide" id="main">
     <img class="cover w" src="pictures/time3.jpeg" alt="">
 
     <h2 class="cover">
@@ -131,7 +148,7 @@
           <br>
           💩 Самоучка
           <br>
-          🤯 Имею диплом психолога
+          🤯 Вышка по психологии
           <br>
         </p>
       </div>
@@ -154,6 +171,8 @@
           Где меня найти?
         </h2>
         <p>
+          😀 Кучук Андрей
+          <br>
           Github: <a href="https://github.com/Kreezag" alt="">Kreezag</a>
           <br>
           Telegram: @Kreez_AG
@@ -166,7 +185,7 @@
     </div>
   </section>
 
-  <section class="slide no-number bg">
+  <section class="slide bg">
     <h2 class="white">
       Как все успевать?
     </h2>
@@ -177,7 +196,7 @@
     <img class='cover h' src="pictures/time2.jpeg" alt="">
   </section>
 
-  <section class="slide no-number bg">
+  <section class="slide bg">
     <img class='cover h' src="pictures/time3.jpeg" alt="">
   </section>
 
@@ -218,7 +237,7 @@
     <img class='cover h' src="pictures/dorofeev.jpeg" alt="">
   </section>
 
-  <section class="slide no-number bg">
+  <section class="slide bg">
     <h2 class="white">
       Кто читал эти книги?
     </h2>
@@ -261,7 +280,6 @@
     </p>
   </section>
 
-
   <section class="slide">
     <h2>
       3 уровня сложности
@@ -269,6 +287,296 @@
 
     <img class='cover h' src="pictures/difficult.jpeg" alt="">
   </section>
+
+
+  <section class="slide bg">
+    <h2 class="white doom center">
+      Hard
+    </h2>
+
+    <img class='cover h' src="pictures/hard.png" alt="">
+  </section>
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Техники
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Цели по SMART
+    </h2>
+
+    <img class='contain' src="pictures/smart.png" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="white">
+      Техники: Визуализация
+    </h2>
+
+    <img class='cover h' src="pictures/visual.jpeg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: техника 3 шагов
+    </h2>
+
+    <img class='contain' src="pictures/3steps.jpeg " alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: кушая слона по частям
+    </h2>
+
+    <img class='contain' src="pictures/elephant.png" alt="">
+  </section>
+
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: помидор-таймер
+    </h2>
+
+    <img class='contain' src="pictures/tomato.jpg" alt="">
+  </section>
+
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Советы
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>
+      Советы
+    </h2>
+
+    <ul>
+      <li>
+        Избавься от дел которые тебе не нужны
+      </li>
+      <li>
+        Ставьте дедлайн
+      </li>
+      <li>
+        Pегулярность важнее количества (правило сложного процента)
+      </li>
+      <li>
+        Комфорт - это важно
+      </li>
+      <li>
+        Прокрастинация - сигнал о не проработанной цели
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide bg">
+    <h2 class="white doom center">
+      Impossible
+    </h2>
+
+    <img class='cover h' src="pictures/impossible.png" alt="">
+  </section>
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Техники
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Принцип лягушки
+    </h2>
+
+    <img class='contain' src="pictures/frog.jpeg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Матрица Эйзенхауэра
+    </h2>
+
+    <img class='cover h' src="pictures/...jpeg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Принцип 9 дел (1-3-5)
+    </h2>
+
+    <img class='contain' src="pictures/...jpeg " alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Система Тима Ферриса
+    </h2>
+
+    <img class='contain' src="pictures/...png" alt="">
+  </section>
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Советы
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>
+      Советы
+    </h2>
+
+    <ul>
+      <li>
+        Планируйте время на отдых
+      </li>
+      <li>
+        Планируйте 20-30% времени на внезапные активности
+      </li>
+      <li>
+        Записанная задача - свободное место в вашей оперативке
+      </li>
+      <li>
+        Блокнот - универсальное место хранения задач
+      </li>
+      <li>
+        Держите списки дел под рукой - так меньше шансов что-то забыть
+      </li>
+    </ul>
+  </section>
+
+
+  <section class="slide bg">
+    <h2 class="white doom center">
+      Nightmare
+    </h2>
+
+    <img class='cover h' src="pictures/nightmare.png" alt="">
+  </section>
+
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Техники
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Zero Inbox
+    </h2>
+
+    <img class='contain' src="pictures/...jpg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Техники: Правило 2х минут
+    </h2>
+
+    <img class='contain' src="pictures/...jpeg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Fresh or Fried
+    </h2>
+
+    <img class='cover h' src="pictures/...jpeg" alt="">
+  </section>
+
+  <section class="slide ">
+    <h2 class="">
+      Система 4D
+    </h2>
+
+    <img class='contain' src="pictures/...jpeg " alt="">
+  </section>
+
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns two">
+      <div>
+        <h2>
+          Советы
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>
+      Советы
+    </h2>
+
+    <ul>
+      <li>
+        Не строить планы а анализировать ситуацию
+      </li>
+      <li>
+        Обращать внимание на то что постоянно, когда все вокруг меняется
+      </li>
+      <li>
+        Доверься интуиции
+      </li>
+      <li>
+        Перестать контролировать (закон мерфи - что-нибудь пойдет не так, это нормально)
+      </li>
+      <li>
+        Прокачивать сильные стороны
+      </li>
+    </ul>
+  </section>
+
 
   <section class="slide shout">
     <h2 class="shout">
@@ -293,7 +601,7 @@
         Выбирайте инструмент под задачу
       </li>
       <li>
-        Учитесь находить смыл даже в самой бессмысленной работе.
+        Учитесь находить смыл даже в самой бессмысленной работе
       </li>
       <li>
         Правильная формулировка задачи - пол результата
@@ -302,15 +610,26 @@
         Найдите время когда вы наиболее продуктивны
       </li>
       <li>
-        Занимайтесь своим здоровьем (физическим и моральным)
+        Занимайтесь своим здоровьем (физическим и психическим)
       </li>
     </ul>
   </section>
 
+  <section class="slide shout">
+    <h2 class="shout">
+      &nbsp;
+    </h2>
+
+    <div class="columns one">
+      <h2 class="">
+        Личные советы
+      </h2>
+    </div>
+  </section>
 
   <section class="slide">
     <h2>
-      Советы из практики
+      Личные советы
     </h2>
 
     <ul>
@@ -318,7 +637,7 @@
         Ищите способы не как больше впихнуть, а как больше выбросить
       </li>
       <li>
-        Иногда чтоб сесть за работу нужно 10 минут не делать НИЧЕГО
+        Иногда, чтобы сесть за неприятную работу, нужно 10 минут не делать НИЧЕГО
       </li>
       <li>
         Меняйте локации, чтобы быстрее переключиться между задачами
