@@ -4,10 +4,10 @@
   "description": "my presentations",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:vue && npm run build:grow-team && npm run build:time-menagement",
+    "build": "npm run build:vue && npm run build:grow-team && npm run build:time-management",
     "build:vue": "cd vue-reactivity-slides && npm install && cd ../",
     "build:grow-team": "cd spiral-grow-team && npm install && cd ../",
-    "build:time-menagement": "cd spiral-time-management && npm install && cd ../",
+    "build:time-management": "cd spiral-time-management && npm install && cd ../"
   },
   "repository": {
     "type": "git",
